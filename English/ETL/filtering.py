@@ -1,8 +1,7 @@
 import pandas as pd
 import unicodecsv as csv
 
-#se filtra cada base de datos, se le da una organizacion dependiendo de la zona de residencia y un detalle que permita ubicar
-#luego se escribe una base nueva filtrada con los datos filtrados para luego ser unificada con otra base.
+#this code filters, clean and format one by one each database
 data = pd.read_csv('db_cocorna_enlaces.csv', usecols=['TEL', 'NOM1', 'NOMBARRIO', 'NOMVEREDA'], encoding='utf-8')
 tel_filtered = []
 data_filtered = []

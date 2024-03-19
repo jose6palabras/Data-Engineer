@@ -7,14 +7,16 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By 
 import time 
 import pandas as pd
-#toma bd de contactos
-data = pd.read_csv('WhatsApp_contacts_verified.csv', usecols=['Display Name'], encoding='utf-8')
+
+# this code stars a Google Chrome window then it opens the WhatsApp's url 
+#search for each contact in the database and send a message
+
+data = pd.read_csv('WhatsApp_contacts_verified.csv', usecols=['Display Name'], encoding='utf-8') #this line takes the contacts from the db
  
 options = webdriver.ChromeOptions()
 options.add_argument("user-data-dir=/home/josel/.config/chromium/Default")
-
 driver = webdriver.Chrome(executable_path=r'/home/josel/Documentos/Detec/BigData/interes_comun/chromedriver', chrome_options=options) 
-#abre la ventana de Google Crhome
+#search the url
 driver.get("https://web.whatsapp.com/") 
 wait = WebDriverWait(driver, 600)
 f = open ("conteo_soporte.txt", "w")
@@ -30,7 +32,7 @@ for i in range(542, len(data)):
     search[0].send_keys(Keys.ENTER)
     inp_xpath = '//div[@dir="ltr"][@data-tab="1"][@spellcheck="true"]'
     input_box = wait.until(EC.presence_of_element_located((By.XPATH, inp_xpath)))
-    #envia el mensaje deseado
+    #send the message you want
     input_box.send_keys(u"Hola, soy Memo Gómez y cuento contigo para que juntos construyamos el camino de desarrollo que necesita Cocorná. Te invito a que conozcas más de mí, viendo este video:  https://cutt.ly/Eovg61")
     time.sleep(5)
     input_box.send_keys(Keys.ENTER)

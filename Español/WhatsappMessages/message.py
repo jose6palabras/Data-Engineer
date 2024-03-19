@@ -5,8 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By 
 import time 
 
-# Replace below path with the absolute path 
-# to chromedriver in your computer 
+#esto es un codigo de prueba
 options = webdriver.ChromeOptions()
 options.add_argument("user-data-dir=/home/josel/.config/chromium/Default")
 

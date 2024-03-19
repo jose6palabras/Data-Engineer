@@ -4,9 +4,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.common.by import By 
 import time 
-
-# Replace below path with the absolute path 
-# to chromedriver in your computer 
+#this is a practice code
+# this code stars a Google Chrome window then it opens the WhatsApp's url search for each contact in the database and send a message
 options = webdriver.ChromeOptions()
 options.add_argument("user-data-dir=/home/josel/.config/chromium/Default")
 
